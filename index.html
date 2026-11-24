@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ماموستا سیپەل عبدالسلام – پلانێن بەشداریێ</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--tx:#1d2a26;--mut:#5d6b66;--ac:#0f6b57;--ac2:#e3f2ed;--bd:#dcd8cc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a17;--card:#1b2622;--tx:#eaf1ee;--mut:#9fb0a9;--ac:#4cc3a3;--ac2:#1f3a32;--bd:#2d3d37}}
+:root[data-theme="dark"]{--bg:#121a17;--card:#1b2622;--tx:#eaf1ee;--mut:#9fb0a9;--ac:#4cc3a3;--ac2:#1f3a32;--bd:#2d3d37}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Noto Naskh Arabic","Segoe UI",Tahoma,Arial,sans-serif;line-height:1.8}
+main{max-width:760px;margin:0 auto;padding:20px 16px 40px}
+.hero{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px}
+h1{margin:0 0 4px;font-size:1.6rem;color:var(--ac)}
+.sub{color:var(--mut);margin:0 0 12px}
+ul{margin:0;padding:0 20px 0 0}
+li{margin:4px 0}
+h2{font-size:1.15rem;margin:24px 0 10px}
+.btns{display:grid;gap:10px}
+@media(min-width:560px){.btns{grid-template-columns:1fr 1fr}}
+.btn{font:inherit;text-align:right;padding:14px 16px;border-radius:12px;border:2px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer}
+.btn[aria-pressed="true"]{border-color:var(--ac);background:var(--ac2)}
+.btn b{display:block;color:var(--ac)}
+.panel{margin-top:16px;display:none}
+.panel.on{display:block}
+.tag{display:inline-block;background:var(--ac2);color:var(--ac);padding:2px 12px;border-radius:99px;margin-bottom:10px}
+.plan{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 16px;margin-bottom:8px}
+.plan span:first-child b{color:var(--ac)}
+.price{font-weight:700;white-space:nowrap}
+a.plan{text-decoration:none;color:inherit}
+a.plan:hover{border-color:var(--ac)}
+.wa{display:block;color:var(--ac);font-size:.85rem}
+.bar{display:flex;gap:8px;justify-content:space-between;margin-bottom:12px}.tb{font:inherit;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:99px;padding:6px 16px;cursor:pointer;min-width:44px}
+.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:20;align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.dlg{background:var(--bg);border-radius:16px;max-width:520px;width:100%;max-height:88vh;overflow:auto;padding:20px;position:relative}
+.x{position:absolute;top:10px;left:10px;border:0;background:var(--ac2);color:var(--ac);width:34px;height:34px;border-radius:50%;font-size:1rem;cursor:pointer}
+.dlg h3{margin:0 0 10px;padding-left:40px;font-size:1.1rem;color:var(--ac)}
+.note{color:var(--mut);font-size:.9rem}
+</style>
+</head>
+<body>
+<main>
+<div class="bar"><button class="tb" id="lg"></button><button class="tb" id="th" aria-label="theme">🌙</button></div>
+<section class="hero" id="hero"></section>
+<h2 id="h2"></h2>
+<div class="btns" id="btns"></div>
+<div class="ov" id="ov"><div class="dlg" role="dialog" aria-modal="true"><button class="x" id="x" aria-label="X">✕</button><div id="dc"></div></div></div>
+</main>
+<script>
+var WA="";
+var L={
+ku:{lg:"عربی",title:"ماموستا سیپەل عبدالسلام – پلانێن بەشداریێ",name:"ماموستا سیپەل عبدالسلام",sub:"ماموستایا زمانێ کوردی و عەرەبی و گەشەپێدانا مروڤی",
+bio:["بکالوریوس: دراسات الاسلامیة و العربیة","دبلوم: علوم الشرعیة واللغة العربیة","دبلوم TOT / نوتنکهاما بریتانی د گەشەپێدانا مروڤی دا","بەشداربوون د چەندین خولان دا و وەرگرتنا چەندین باوەرنامەیان د بوارێن جودا جودا دا ل وەلاتێن عەرەبی و وەلاتێن دیتر وەک کویت، مملکة العربیە السعودیة، فلستین، بغداد، مالیزیا و کوردستان","ڤەکرنا چەندین خولێن زمانێ کوردی و عەرەبی و گوتنا وانێت تایبەت بۆ قوتابیێن پۆلا 1ێ بنەڕەت تا 12ێ ئامادەیی","ڤەکرنا خولێن گەشەپێدانا مروڤی بۆ گەنجان"],
+h2:"پلانێن بەشداریێ",wa:"کلیک بکە بۆ ناردن ب واتسئاپ",
+msg:"سلاو ماموستا سیپەل، ئەز دڤێم بەشداریێ ل ڤی پلانی بکەم:",pr:"نرخ",
+all:"هەمی بابەت",sa:"بابەت / عەرەبی",
+t:["پۆلا 1 تا 6 بنەڕەتی","پۆلا 7 تا 9 ناڤنجی","پۆلا 10 تا 12 ناڤنجی","فێربوونا زمانێ عەرەبی"],ar:"پلانا فێربوونا زمانێ عەرەبی",
+n:["پلانا ئێکێ","پلانا دووێ","پلانا سیێ","پلانا چارێ","پلانا پێنجێ","پلانا شەشێ"],
+m:["هەیڤ کامل / ژبلی ئەینیان","هەیڤ / حەفتیێ 4 ڕۆژ","هەیڤ / حەفتیێ 3 ڕۆژ","هەیڤ / حەفتیێ 2 ڕۆژ","هەیڤ / حەفتیێ 1 ڕۆژ","حەفتیەک کامل"],
+ex:"پلانا تاقیکرنا",exs:"تاقیکرن",e:[["پۆلا 1 بنەڕەت تا 12 ئامادەیی","تاقیکرن ل سەر 20 نمرا"],["پۆلا 12 ئامادەیی","تاقیکرنێن وەزاری / منهج کامل"]],kid:"پلان بۆ زاڕۆکان",adu:"پلان بۆ مەزنان",km:"هەیڤ کامل / ژبلی ڕۆژێن ئەینی",d:"دینار",u:"دۆلار"},
+ar:{lg:"کوردی",title:"الأستاذة سيبل عبدالسلام – خطط الاشتراك",name:"الأستاذة سيبل عبدالسلام",sub:"مدرّسة اللغة الكردية والعربية والتنمية البشرية",
+bio:["بكالوريوس: الدراسات الإسلامية والعربية","دبلوم: العلوم الشرعية واللغة العربية","دبلوم TOT من نوتنغهام (بريطانيا) في التنمية البشرية","المشاركة في عدة دورات والحصول على شهادات في مجالات مختلفة في دول عربية ودول أخرى مثل الكويت والمملكة العربية السعودية وفلسطين وبغداد وماليزيا وكردستان","افتتاح عدة دورات في اللغة الكردية والعربية وإعطاء دروس خاصة لطلاب الصفوف من الأول الابتدائي إلى الثاني عشر الإعدادي","افتتاح دورات التنمية البشرية للشباب"],
+h2:"خطط الاشتراك",wa:"اضغط للإرسال عبر واتساب",
+msg:"السلام عليكم أستاذة سيبل، أرغب بالاشتراك في هذه الخطة:",pr:"السعر",
+all:"جميع المواد",sa:"المواد / العربية",
+t:["الصفوف من الأول إلى السادس الابتدائي","الصفوف من السابع إلى التاسع (المتوسط)","الصفوف من العاشر إلى الثاني عشر (الإعدادي)","تعلّم اللغة العربية"],ar:"خطة تعلّم اللغة العربية",
+n:["الخطة الأولى","الخطة الثانية","الخطة الثالثة","الخطة الرابعة","الخطة الخامسة","الخطة السادسة"],
+m:["شهر كامل / عدا أيام الجمعة","شهر / 4 أيام في الأسبوع","شهر / 3 أيام في الأسبوع","شهر / يومان في الأسبوع","شهر / يوم واحد في الأسبوع","أسبوع كامل"],
+ex:"خطة الامتحانات",exs:"امتحانات",e:[["من الصف الأول الابتدائي إلى الثاني عشر الإعدادي","امتحان من 20 درجة"],["الصف الثاني عشر الإعدادي","الامتحانات الوزارية / المنهج كامل"]],kid:"خطة للأطفال",adu:"خطة للكبار",km:"شهر كامل / عدا أيام الجمعة",d:"دينار",u:"دولار"}};
+var lang="ku",B=[[0,[250,200,170,75],[0,1,2,5],"all"],[1,[200,140,120,100,60,70],[0,1,2,3,4,5],"sa"],[2,[200,140,120,100,60,70],[0,1,2,3,4,5],"sa"]];
+function f(n){return n.toLocaleString("en-US")}
+function data(){var l=L[lang],o=[];
+B.forEach(function(b){o.push({t:l.t[b[0]],s:l[b[3]],p:b[1].map(function(v,i){return[l.n[i],l.m[b[2][i]],f(v*1000)+" "+l.d]})})});
+o.push({t:l.t[3],s:l.ar,p:[[l.kid,l.km,"200,000 "+l.d],[l.adu,l.km,"300 "+l.u]]});o.push({t:l.ex,s:l.exs,p:[[l.e[0][0],l.e[0][1],"25,000 "+l.d],[l.e[1][0],l.e[1][1],"100,000 "+l.d]]});return o}
+var ov=document.getElementById("ov"),dc=document.getElementById("dc"),cur=null;
+function close(){ov.classList.remove("on");cur=null}
+function open(i){cur=i;var l=L[lang],d=data()[i];
+dc.innerHTML="<h3>"+d.t+"</h3><span class=\"tag\">"+d.s+"</span>";
+d.p.forEach(function(r){var m=l.msg+"\n"+d.t+" ("+d.s+")\n"+r[0]+" – "+r[1]+"\n"+l.pr+": "+r[2];
+var a=document.createElement("a");a.className="plan";a.target="_blank";a.rel="noopener";
+a.href="https://wa.me/"+WA+"?text="+encodeURIComponent(m);
+a.innerHTML="<span><b>"+r[0]+"</b><br>"+r[1]+"<span class=\"wa\">"+l.wa+"</span></span><span class=\"price\">"+r[2]+"</span>";dc.appendChild(a)});
+ov.classList.add("on")}
+function render(){var l=L[lang];document.documentElement.lang=lang==="ar"?"ar":"ckb";document.title=l.title;
+document.getElementById("lg").textContent=l.lg;
+document.getElementById("hero").innerHTML="<h1>"+l.name+"</h1><p class=\"sub\">"+l.sub+"</p><ul>"+l.bio.map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul>";
+document.getElementById("h2").textContent=l.h2;
+var b=document.getElementById("btns");b.innerHTML="";
+data().forEach(function(d,i){var x=document.createElement("button");x.className="btn";x.innerHTML="<b>"+d.t+"</b>"+d.s;x.onclick=function(){open(i)};b.appendChild(x)});
+if(cur!==null)open(cur)}
+document.getElementById("lg").onclick=function(){lang=lang==="ku"?"ar":"ku";render()};
+var dark=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches;
+function theme(){document.documentElement.setAttribute("data-theme",dark?"dark":"light");document.getElementById("th").textContent=dark?"☀️":"🌙"}
+document.getElementById("th").onclick=function(){dark=!dark;theme()};
+document.getElementById("x").onclick=close;
+ov.onclick=function(e){if(e.target===ov)close()};
+document.onkeydown=function(e){if(e.key==="Escape")close()};
+theme();render();
+</script>
+</body>
+</html>
